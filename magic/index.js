@@ -25,7 +25,7 @@ $(document).ready(function(){
         }
         
         for(var i = 0; i < res.products.length; i++) {
-            $('#products').append('<div class="col-xs-4"><img src="'+res.products[i].imageURL+'" width="200" class="img-rounded img-responsive img-raised"'+i+'"><button class="btn btn-info">' +res.products[i].productName+'</button></div>');
+            $('#products').append('<div class="col-xs-4"><img src="'+res.products[i].imageURL+'" width="200" class="img-rounded img-responsive img-raised"'+i+'"><span>' +res.products[i].productName+' </span><span class="label label-info">&#8377; '+res.products[i].ourPrice+'</span></div>');
         }
     }
 });
