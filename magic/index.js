@@ -1,6 +1,18 @@
-link = "https://us-central1-bookaholic-786.cloudfunctions.net/home"
+/*
+ *
+ *link to the json response
+ *
+*/
+var link = "https://us-central1-bookaholic-786.cloudfunctions.net/home"
 
 $(document).ready(function(){
+    
+    /*
+    *
+    *ajax handles response and calls editHtml function passing json response as
+    *an argument
+    *
+    */
     
     $.ajax({
             headers : {
@@ -14,6 +26,11 @@ $(document).ready(function(){
         });
     
     function editHtml(res) {
+        /*
+        *
+        *for loop to display combo images in slider
+        *
+        */
         for (var i = 0; i < res.combos.length; i++){
             if (i==0) {
                 $('.carousel-indicators').html('<li data-target="#myCarousel" data-slide-to="0" class="active"></li>');
@@ -23,6 +40,12 @@ $(document).ready(function(){
                 $('.carousel-inner').append('<div class="item"><img src="'+res.combos[i].imageURL+'" alt="Los Angeles" style="height:450px; width: 100%;"></div>');
             }
         }
+        
+        /*
+        *
+        *for loop to display products in horizontal scroll
+        *
+        */
         
         for(var i = 0; i < res.products.length; i++) {
             $('#products').append('<div class="col-xs-4"><img src="'+res.products[i].imageURL+'" width="200" class="img-rounded img-responsive img-raised" style="margin-bottom: 10px;"><span>' +res.products[i].productName+' </span><span class="label label-info">&#8377; '+res.products[i].ourPrice+'</span><br><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal'+i+'"><i class="material-icons">info</i> More Info</button></div>');
