@@ -25,7 +25,9 @@ $(document).ready(function(){
         }
         
         for(var i = 0; i < res.products.length; i++) {
-            $('#products').append('<div class="col-xs-4"><img src="'+res.products[i].imageURL+'" width="200" class="img-rounded img-responsive img-raised"'+i+'"><span>' +res.products[i].productName+' </span><span class="label label-info">&#8377; '+res.products[i].ourPrice+'</span></div>');
+            $('#products').append('<div class="col-xs-4"><img src="'+res.products[i].imageURL+'" width="200" class="img-rounded img-responsive img-raised"'+i+'" style="margin-bottom: 10px;"><span>' +res.products[i].productName+' </span><span class="label label-info">&#8377; '+res.products[i].ourPrice+'</span><br><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal'+i+'"><i class="material-icons">info</i> More Info</button></div>');
+            
+            $('.awesome').append('<div id="myModal'+i+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">Author name: '+res.products[i].authorName+'</h4></div><div class="modal-body"><p>Our Price: '+res.products[i].ourPrice+'<br>Stock Left: '+res.products[i].quantity+'<br></p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>');
         }
     }
 });
