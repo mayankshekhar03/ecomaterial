@@ -34,7 +34,7 @@ $(document).ready(function(){
         for (var i = 0; i < res.combos.length; i++){
             if (i==0) {
                 $('.carousel-indicators').html('<li data-target="#myCarousel" data-slide-to="0" class="active"></li>');
-                $('.carousel-inner').html('<div class="item active"><img src="'+res.combos[i].imageURL+'" alt="Los Angeles" style="height:450px; width: 100%;"></div>');
+                $('.carousel-inner').html('<div class="item active"><img src="'+res.combos[i].imageURL+'" alt="Los Angeles" style="width: 100%;"></div>');
             }else {
                 $('.carousel-indicators').append('<li data-target="#myCarousel" data-slide-to="'+i+'"></li>');
                 $('.carousel-inner').append('<div class="item"><img src="'+res.combos[i].imageURL+'" alt="Los Angeles" style="height:450px; width: 100%;"></div>');
